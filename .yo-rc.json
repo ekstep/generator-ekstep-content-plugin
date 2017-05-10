@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "ekstep",
+      "authorEmail": "ekstep@ekstep.org",
+      "authorUrl": ""
+    }
+  }
+}
