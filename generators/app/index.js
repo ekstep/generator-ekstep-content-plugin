@@ -70,6 +70,13 @@ module.exports = class extends Generator {
                 pluginShortName: pluginShortName
             }, {}, { globOptions: { dot: true } }
         );
+
+        // Workaround for issue where .gitignore gets replaced by .npmignore when used as npm dependency
+        // https://github.com/yeoman/generator/issues/812
+        this.fs.move(
+            this.destinationPath('gitignore_renamed_in_generator'),
+            this.destinationPath('.gitignore')
+        );
     }
 
     install() {
