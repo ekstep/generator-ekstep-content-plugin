@@ -26,6 +26,12 @@ npm install
 npm test
 ```
 
+* Running tests in watch mode
+
+```
+node_modules/jest/bin/jest.js --watch __tests__/*
+```
+
 * Verifying generator locally
 
 ```
