@@ -31,7 +31,8 @@
     "scripts": {
         "prepublish": "nsp check",
         "pretest": "eslint . --fix",
-        "test": "jest __tests__/**"
+        "test": "jest __tests__/**",
+        "build": "npm install && npm test"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",

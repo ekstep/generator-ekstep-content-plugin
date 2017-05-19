@@ -80,16 +80,16 @@ module.exports = class extends Generator {
     }
 
     install() {
-        const self = this;
-        this.installDependencies({
-            callback: function() {
-                self.log(chalk.green('Running gulp'));
-                self.spawnCommandSync('node_modules/gulp/bin/gulp.js');
-                self.log(chalk.green(`
+        if (!this.options.skipInstall) {
+            this.log('Running', chalk.green('npm run build'));
+            var result = this.spawnCommandSync('npm', ['run', 'build']);
+            if (result.status !== 0) {
+                this.env.error('There was problem running : npm run build');
+            }
+            this.log(chalk.green(`
 You are all set here!
 Find developer docs on https://github.com/ekstep/Contributed-Plugins/wiki
 If you need inspiration from other plugins, visit https://github.com/ekstep?q=org.ekstep.plugins`));
-            }
-        });
+        }
     }
 };
