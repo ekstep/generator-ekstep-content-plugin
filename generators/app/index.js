@@ -68,7 +68,13 @@ module.exports = class extends Generator {
                 pluginAuthor: pluginAuthor,
                 pluginNameSpace: pluginNameSpace,
                 pluginShortName: pluginShortName
-            }, {}, { globOptions: { dot: true } }
+            }, {}, { globOptions: { dot: true} }
+        );
+
+        // This is to ensure image files are not corrupted due to copy template
+        this.fs.copy(
+            this.templatePath('plugin-files/assets'),
+            this.destinationPath('./assets')
         );
 
         // Workaround for issue where .gitignore gets replaced by .npmignore when used as npm dependency

@@ -105,6 +105,10 @@ describe('generator-ekstep-content-plugin:app', () => {
             assert.fileContent('test/renderer/plugin.spec.js', /RendererPlugin/);
         });
 
+        it('should copy assets icon image without changing the content', () => {
+            assert.fileContent('assets/icon.png', generator.fs.read(generator.templatePath('plugin-files/assets/icon.png')));
+        });
+
         describe('with name & version configuration from prompts', function() {
             beforeAll(done => {
                 return helpers.run(path.join(__dirname, '../generators/app'))
