@@ -18,5 +18,9 @@
     },
     "renderer": {
         "main": "renderer/plugin.js"
-    }
+    },
+    "icon": "assets/icon.png",
+    "languages": ["English"],
+    "categories": [""],
+    "keywords": [""]
 }
